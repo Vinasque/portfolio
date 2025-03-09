@@ -56,6 +56,41 @@ label {
   margin-block: 1rem;
 } */
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  padding: 1rem;
+  border: 1px solid var(--grey);
+  border-radius: 8px;
+  background: #f9f9f9;
+}
+
+.projects article h2 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 400%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
 form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -69,4 +104,29 @@ form label {
 
 label, button {
   grid-column: 1 / -1;
+}
+
+/* Estilo adicional */
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--grey);
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: square;
+  padding-left: 1.5rem;
 }
