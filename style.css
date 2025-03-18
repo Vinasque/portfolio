@@ -2,6 +2,7 @@
   --grey: oklch(80% 3% 200);
   --color-accent: oklch(65% 50% 0);
   --color-accent-bg: oklch(from var(--color-accent) 95% 5% h);
+  --border-color: oklch(50% 10% 200 / 40%);
 }
 
 body {
@@ -15,7 +16,7 @@ nav {
   display: flex;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: var(--grey);
+  border-bottom-color: var(--border-color);
 }
 
 nav a {
@@ -39,7 +40,7 @@ nav a:hover {
   border-bottom-style: solid;
   border-bottom-color: var(--color-accent);
   padding-bottom: -0.1em;
-  background-color: var(--color-accent-bg)
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 /* label, input, textarea, button {
@@ -75,7 +76,7 @@ img {
   padding: 1rem;
   border: 1px solid var(--grey);
   border-radius: 8px;
-  background: #f9f9f9;
+  background: #a3a3a3;
 }
 
 .projects article h2 {
@@ -106,7 +107,6 @@ label, button {
   grid-column: 1 / -1;
 }
 
-/* Estilo adicional */
 .container {
   background: white;
   padding: 2rem;
@@ -129,4 +129,28 @@ label, button {
 ul {
   list-style-type: square;
   padding-left: 1.5rem;
+}
+
+html {
+  color-scheme: light;
+}
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;  /* Distância do topo */
+  right: 1rem; /* Distância da direita */
+  display: inline-flex; /* Mantém o label e o select na mesma linha */
+  align-items: center; /* Alinha verticalmente */
+  gap: 4px; /* Espaço entre o texto "Theme:" e o seletor */
+  background: rgba(0, 0, 0, 0.1); /* Fundo semi-transparente */
+  padding: 8px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+}
+
+.color-scheme select {
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  cursor: pointer;
 }
